@@ -1,11 +1,9 @@
 // this will act as the "root component"
-
-import Post from "./components/Post";
+import PostList from "./components/PostList";
 
 function App() {
   return <main>
-    <Post author="Phoenix" body="'Almost Christmas' means it wasn't Christmas!"/>
-    <Post author="Grant" body="Give it up for day 15!"/>
+    <PostList />
   </main>;
 }
 
