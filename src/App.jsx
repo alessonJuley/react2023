@@ -1,10 +1,25 @@
 // this will act as the "root component"
+import MainHeader from "./components/MainHeader";
 import PostList from "./components/PostList";
+import { useState } from "react";
 
 function App() {
-  return <main>
-    <PostList />
-  </main>;
+
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  function hideModalHandler(){
+    setModalIsVisible(false);
+  }
+
+  function showModalHandler(){
+    setModalIsVisible(true);
+  }
+
+  return (<><MainHeader onCreatePost={showModalHandler}/>
+  <main>
+    <PostList isPosting={modalIsVisible} onStopPosting={hideModalHandler}/>
+  </main>
+  </>);
 }
 
 export default App;
