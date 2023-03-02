@@ -1,3 +1,6 @@
+// to make this react-icons available to your code base
+// open terminal and type npm install react-icons
+// you have to stop running your app tho before you do this
 import { MdPostAdd, MdMessage } from 'react-icons/md';
 import classes from './MainHeader.module.css';
 
