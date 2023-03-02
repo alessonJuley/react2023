@@ -7,13 +7,13 @@ import Modal from "./Modal";
 function PostList({isPosting, onStopPosting}) {
 
           const [enteredbody, setEnteredBody] = useState("");
-          const [enteredAuthor, serEnteredAuthor] = useState("");
+          const [enteredAuthor, setEnteredAuthor] = useState("");
 
           function bodyChangeHandler(event){
                     setEnteredBody(event.target.value);
           }
           function authorChangeHandler(event){
-                    serEnteredAuthor(event.target.value);
+                    setEnteredAuthor(event.target.value);
           }
 
           let modalContent;
