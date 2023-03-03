@@ -12,7 +12,7 @@ const createRouter = createBrowserRouter([
     element: <RootLayout/>,   // this one loads home w/ header 
     children: [               // children 1 of Parent
       {
-        path: "/posts", 
+        path: "/", 
         element: <Posts />,   // this one loads the posts
         loader: postsLoader,  // <Posts /> will not load until loader is done doing it's job
         children: [           // this is children 1's children
