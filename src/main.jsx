@@ -6,18 +6,19 @@ import './index.css'
 import NewPost from './routes/NewPost'
 import RootLayout from './routes/RootLayout'
 
+// this part is about router (it helps in changing the URL)
 const createRouter = createBrowserRouter([
   { path: "/", 
-    element: <RootLayout/>, 
-    children: [
+    element: <RootLayout/>,   // this one loads home w/ header 
+    children: [               // children 1 of Parent
       {
         path: "/", 
-        element: <Posts />, 
-        loader: postsLoader,
-        children: [
+        element: <Posts />,   // this one loads the posts
+        loader: postsLoader,  // <Posts /> will not load until loader is done doing it's job
+        children: [           // this is children 1's children
           {
-            path: "/create-post", 
-            element: <NewPost />
+            path: "/create-post",
+            element: <NewPost />    // this leads to new posts form
           }
         ]
       },  
