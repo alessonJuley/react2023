@@ -37,7 +37,7 @@ function NewPost({onAddPost}) {
                                         <input type="text" id="name" required onChange={authorChangeHandler}/>
                               </p>
                               <p className={classes.actions}>
-                                        <Link to=".."type="button">Cancel</Link>
+                                        <Link to=".."type="button">Cancel</Link>  {/* this goes back to home */}
                                         <button>Post</button>
                               </p>
                     </form>
