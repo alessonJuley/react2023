@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Posts, { loader as postsLoader} from './routes/Posts'
 import './index.css'
-import NewPost from './routes/NewPost'
+import NewPost, { action as newPostAction} from './routes/NewPost'
 import RootLayout from './routes/RootLayout'
 
 // this part is about router (it helps in changing the URL)
@@ -18,7 +18,8 @@ const createRouter = createBrowserRouter([
         children: [           // this is children 1's children
           {
             path: "/create-post",
-            element: <NewPost />    // this leads to new posts form
+            element: <NewPost />,
+            action: newPostAction   // this will be triggered if a form is submitted
           }
         ]
       },  
