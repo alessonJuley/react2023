@@ -32,3 +32,12 @@ function PostDetails() {
 }
 
 export default PostDetails;
+export async function loader({params}){
+  const reponse = await fetch("http://localhost:8080/posts/" + params.id);
+  // id is from main.jsx inside path
+
+  const resData = await reponse.json();
+  // .post because the backend sends back an object with a post key 
+  // app.js > res.json({ post });
+  return resData.post;
+}

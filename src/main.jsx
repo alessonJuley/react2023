@@ -5,6 +5,7 @@ import Posts, { loader as postsLoader} from './routes/Posts'
 import './index.css'
 import NewPost, { action as newPostAction} from './routes/NewPost'
 import RootLayout from './routes/RootLayout'
+import PostDetails, {loader as postDetailsLoader} from './routes/PostDetails'
 
 // this part is about router (it helps in changing the URL)
 const createRouter = createBrowserRouter([
@@ -20,6 +21,11 @@ const createRouter = createBrowserRouter([
             path: "/create-post",
             element: <NewPost />,
             action: newPostAction   // this will be triggered if a form is submitted
+          },
+          {
+            path: "/:id",     // this is a dynamic path parameter
+            element: <PostDetails/>,
+            loader: postDetailsLoader
           }
         ]
       },  
